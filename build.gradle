@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "dictionary"
 version = '1.0'
-mainClassName = "Dictionary"
+mainClassName = "App"
 
 repositories {
  mavenCentral()
