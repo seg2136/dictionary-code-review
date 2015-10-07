@@ -5,13 +5,13 @@ public class WordTest {
 
   @Test
   public void word_instantiatesCorrectly_true() {
-    Word myWord = new Word("sunshine");
+    Word myWord = new Word("Sunshine");
     assertEquals(true, myWord instanceof Word);
   }
 
   @Test
   public void word_instantiatesWithTerm_true() {
-    Word myWord = new Word("happiness");
-    assertEquals("happiness", myWord.getTerm());
+    Word myWord = new Word("Happiness");
+    assertEquals("Happiness", myWord.getTerm());
   }
 }

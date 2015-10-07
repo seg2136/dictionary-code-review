@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-10-07T21:58:53" hostname="epicodus-202.local" time="0.001">
+<testsuite name="WordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-10-07T22:30:04" hostname="epicodus-202.local" time="0.0">
   <properties/>
-  <testcase name="word_instantiatesWithTerm_true" classname="WordTest" time="0.001"/>
+  <testcase name="word_instantiatesWithTerm_true" classname="WordTest" time="0.0"/>
   <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -19,6 +19,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+
 		//POST METHOD TO SAVE USERNAMES ON HOME PAGE
 		post("/welcome", (request, response) -> {
 			HashMap<String, Object> model = new HashMap<String, Object>();
@@ -30,6 +31,20 @@ public class App {
 			model.put("template", "templates/home.vtl");
 			return new ModelAndView(model, layout);
 		}, new VelocityTemplateEngine());
+
+
+		//POST METHOD TO SAVE NEW WORDS
+		post("/words", (request, response) -> {
+			HashMap<String, Object> model = new HashMap<String, Object>();
+
+			String term = request.queryParams("term");
+			Word newWord = new Word(term);
+			request.session().attribute("word", newWord);
+
+			model.put("template", "templates/newpage.vtl");
+			return new ModelAndView(model, layout);
+		}, new VelocityTemplateEngine());
+
 
 	}
 }
