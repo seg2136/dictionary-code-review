@@ -36,7 +36,6 @@ public class App {
 		}, new VelocityTemplateEngine());
 
 
-
 		//POST METHOD TO SAVE NEW WORDS
 		post("/words", (request, response) -> {
 			HashMap<String, Object> model = new HashMap<String, Object>();
@@ -45,6 +44,7 @@ public class App {
 			model.put("template", "templates/newpage.vtl");
 			return new ModelAndView(model, layout);
 		}, new VelocityTemplateEngine());
+
 
 		//GET METHOD TO VIEW INDIVIDUAL WORD PAGE
 		get("/words/:id", (request, response) -> {

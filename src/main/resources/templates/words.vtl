@@ -4,7 +4,7 @@
 <h1> Current Words in Your Dictionary: </h1>
   <div class="well">
     <ul>
-      #foreach ($term in $words)
+      #foreach ($word in $words)
         <a href="/words/$word.getId()">$word.getTerm()</a>
       #end
     </ul>
