@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-10-07T22:30:04" hostname="epicodus-202.local" time="0.0">
+<testsuite name="WordTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-10-08T19:51:45" hostname="epicodus-113.local" time="0.001">
   <properties/>
+  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.0"/>
+  <testcase name="newId_wordsInstantiateWithAnID_true" classname="WordTest" time="0.0"/>
   <testcase name="word_instantiatesWithTerm_true" classname="WordTest" time="0.0"/>
+  <testcase name="clear_emptiesAllWordsFromArrayList" classname="WordTest" time="0.0"/>
+  <testcase name="find_returnsNullWhenNoWordFound_null" classname="WordTest" time="0.0"/>
+  <testcase name="all_returnsAllInstancesOfWord_true" classname="WordTest" time="0.0"/>
   <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

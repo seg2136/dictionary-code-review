@@ -2,22 +2,5 @@
 
 <h1>Create Your Own Dictionary!</h1>
 
-#if ($username)
-  Welcome $username!
-#else
-  <form action="/welcome" method="post">
-    <label for="username">Your name</label>
-    <input id="username" name="username" type="text">
 
-    <button type="submit">Submit Name</button>
-  </form>
-#end
-
-
-<p>Enter a word:</p>
-  <form action="/words" method="post">
-    <label for="term">Term</label>
-    <input id="term" name="term" type="text">
-
-    <button type="submit" class="btn btn-default">Add Word</button>
-  </form>
+<a href="/words/new">Add a new word</a>
