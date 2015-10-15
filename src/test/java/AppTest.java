@@ -38,7 +38,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/words/new");
     fill("#term").with("sunshine");
     submit(".btn");
-    click("a", withText("View Words"));
+    click("a", withText("View All Words"));
     assertThat(pageSource()).contains("sunshine");
   }
 
@@ -47,10 +47,10 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/words/new");
     fill("#term").with("Sunshine");
     submit(".btn");
-    click("a", withText("View Words"));
+    click("a", withText("View All Words"));
     click("a", withText("Sunshine"));
     click("a", withText("Add a new definition"));
-    assertThat(pageSource()).contains("Add a Definition for Sunshine:");
+    assertThat(pageSource()).contains("Enter a New Definition:");
   }
 
   @Test
@@ -58,7 +58,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/words/new");
     fill("#term").with("Happiness");
     submit(".btn");
-    click("a", withText("View Words"));
+    click("a", withText("View All Words"));
     click("a", withText("Happiness"));
     click("a", withText("Add a new definition"));
     fill("#statement").with("Cupcakes");
