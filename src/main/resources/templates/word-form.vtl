@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 
-<p>Enter a new word:</p>
-  <form action="/words" method="post">
-    <div class="form-group">
-      <label for="term">Term</label>
-      <input id="term" name="term" type="text">
-    </div>
+<h1>Add a Word</h1>
 
-    <button type="submit" class="btn btn-default">Add Word</button>
-  </form>
+<p>Add a word here:</p>
 
-<br>
-<a href="/words">View Words</a>
+<form action="/words" method="post">
+  <label for="term">Term</label>
+  <input id="term" name="term" type="text">
+  <button type="submit" class="btn btn-success">Add Word</button>
+</form>

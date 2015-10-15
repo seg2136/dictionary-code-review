@@ -1,53 +1,54 @@
+import java.util.ArrayList;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
 public class WordTest {
 
-  @Rule
-  public ClearRule clearRule = new ClearRule();
-
   @Test
-  public void word_instantiatesCorrectly_true() {
-    Word myWord = new Word("Sunshine");
-    assertEquals(true, myWord instanceof Word);
+  public void getTerm_returnsTerm_true() {
+    Word testWord = new Word("Sunshine");
+    assertEquals("Sunshine", testWord.getTerm());
   }
 
   @Test
-  public void word_instantiatesWithTerm_true() {
-    Word myWord = new Word("Happiness");
-    assertEquals("Happiness", myWord.getTerm());
+  public void getId_returnsWordId() {
+    Word testWord = new Word("Sunshine");
+    assertTrue(Word.all().size() == testWord.getId());
   }
 
   @Test
-  public void all_returnsAllInstancesOfWord_true() {
+  public void getWords_initiallyReturnsEmptyArrayList() {
+    Word testWord = new Word("Sunshine");
+    assertTrue(testWord.getDefinitions() instanceof ArrayList);
+  }
+
+  @Test
+  public void all_returnsAllInstancesOfDefinition_true() {
     Word firstWord = new Word("Sunshine");
-    Word secondWord = new Word("Happiness");
+    Word secondWord = new Word("Sunshine");
     assertTrue(Word.all().contains(firstWord));
     assertTrue(Word.all().contains(secondWord));
   }
 
   @Test
-  public void newId_wordsInstantiateWithAnID_true() {
-    Word myWord = new Word("Sunshine");
-    assertEquals(Word.all().size(), myWord.getId());
-  }
-
-  @Test
-  public void find_returnsWordWithSameId_secondWord() {
-    Word firstWord = new Word("Sunshine");
-    Word secondWord = new Word("Happiness");
-    assertEquals(Word.find(secondWord.getId()), secondWord);
-  }
-
-  @Test
-  public void find_returnsNullWhenNoWordFound_null() {
-    assertTrue(Word.find(999) == null);
-  }
-
-  @Test
-  public void clear_emptiesAllWordsFromArrayList() {
-    Word myWord = new Word("Sunshine");
+  public void clear_removesAllWordInstancesFromMemory() {
+    Word testWord = new Word("Sunshine");
     Word.clear();
     assertEquals(Word.all().size(), 0);
+  }
+
+  @Test
+  public void find_returnsWordWithSameId() {
+    Word testWord = new Word("Sunshine");
+    assertEquals(Word.find(testWord.getId()), testWord);
+  }
+
+  @Test
+  public void addDefinition_addsDefinitionToList() {
+    Word testWord = new Word("Sunshine");
+    Definition testDefinition = new Definition("Defintion");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
   }
 }

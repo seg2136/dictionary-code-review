@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 
-#if ($word)
-  <h2>$word.getTerm()</h2>
-#else
-  <h2> Word not found </h2>
+<h1>$word.getTerm()</h1>
+
+<h3>Here are all the definitions for this word:</h3>
+
+#foreach ($definition in $word.getDefinitions())
+ <ul>
+   <li><h4>$definition.getStatement()</h4></li>
+ </ul>
 #end
 
-<a href="/words/new">Add Another Word</a>
 <br>
-<a href="/words" method="get">View Words</a>
+<a href="/words/$word.getId()/definitions/new">Add a new definition</a>
+<br>
+<a href="/">Return to Main Page</a>

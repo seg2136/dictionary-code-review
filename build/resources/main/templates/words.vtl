@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 
-
 <h1> Current Words in Your Dictionary: </h1>
-  <div class="well">
-    <ul>
-      #foreach ($word in $words)
-        <a href="/words/$word.getId()">$word.getTerm()</a>
-      #end
-    </ul>
-  </div>
 
-<a href="/words/new">Add a new word</a>
-
-
+#foreach($word in $words)
+ <h3><a href="/words/$word.getId()">$word.getTerm()</a></h3>
+#end
 
 <br>
+<a href="/words/new">Add a New Word</a>
 <br>
-<a href="/"> Return to Home Page </a>
+<a href="/">Return to Main Page</a>

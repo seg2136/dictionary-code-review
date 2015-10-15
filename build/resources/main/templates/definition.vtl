@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+#if ($definition)
+  <h2>$definition.getStatement()</h2>
+#else
+  <h2> "Sorry, definition not found. Please insert a definition." </h2>
+#end
+
+<a href="/definitions/new">Add Another Definition</a>
+<br>
+<a href="/definitions" method="get">View Definitions</a>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-10-08T22:20:00" hostname="epicodus-113.local" time="0.001">
+<testsuite name="WordTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-10-15T21:19:54" hostname="epicodus-115.local" time="0.004">
   <properties/>
-  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.0"/>
-  <testcase name="newId_wordsInstantiateWithAnID_true" classname="WordTest" time="0.0"/>
-  <testcase name="word_instantiatesWithTerm_true" classname="WordTest" time="0.0"/>
-  <testcase name="clear_emptiesAllWordsFromArrayList" classname="WordTest" time="0.0"/>
-  <testcase name="find_returnsNullWhenNoWordFound_null" classname="WordTest" time="0.0"/>
-  <testcase name="all_returnsAllInstancesOfWord_true" classname="WordTest" time="0.0"/>
-  <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.0"/>
+  <testcase name="getTerm_returnsTerm_true" classname="WordTest" time="0.0"/>
+  <testcase name="clear_removesAllWordInstancesFromMemory" classname="WordTest" time="0.0"/>
+  <testcase name="getWords_initiallyReturnsEmptyArrayList" classname="WordTest" time="0.0"/>
+  <testcase name="all_returnsAllInstancesOfDefinition_true" classname="WordTest" time="0.0"/>
+  <testcase name="find_returnsWordWithSameId" classname="WordTest" time="0.0"/>
+  <testcase name="addDefinition_addsDefinitionToList" classname="WordTest" time="0.0"/>
+  <testcase name="getId_returnsWordId" classname="WordTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

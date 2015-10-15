@@ -5,14 +5,13 @@ public class Word {
 
   private String mTerm;
   private int mId;
-  // private String mDefinition;
-
+  private ArrayList<Definition> mDefinitions;
 
   public Word(String term) {
     mTerm = term;
     instances.add(this);
     mId = instances.size();
-    // mDefinitions = new ArrayList<Definition>();
+    mDefinitions = new ArrayList<Definition>();
   }
 
   public String getTerm() {
@@ -23,30 +22,28 @@ public class Word {
     return mId;
   }
 
-  public static ArrayList<Word> all() {
-    return instances;
+  public ArrayList<Definition> getDefinitions() {
+    return mDefinitions;
   }
 
-  public static Word find(int id) {
-    try {
-      return instances.get(id - 1);
-    } catch (IndexOutOfBoundsException e) {
-      return null;
-    }
+  public void addDefinition(Definition definition) {
+    mDefinitions.add(definition);
+  }
+
+  public static ArrayList<Word> all() {
+    return instances;
   }
 
   public static void clear() {
     instances.clear();
   }
 
+  public static Word find(int id) {
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
+
 }
-
-
-  //
-  // public ArrayList<Definition> getDefinitions() {
-  //   return mDefinition;
-  // }
-  //
-  // public void addDefinition(Definition definition) {
-  //   mDefinition.add(definition);
-  // }

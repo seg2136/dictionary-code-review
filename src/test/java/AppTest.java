@@ -27,7 +27,7 @@ public class AppTest extends FluentTest {
   @Test
   public void wordIsCreatedTest() {
     goTo("http://localhost:4567/");
-    click("a", withText("Add a new word"));
+    click("a", withText("Add a New Word"));
     fill("#term").with("sunshine");
     submit(".btn");
     assertThat(pageSource()).contains("Your word has been saved.");
@@ -43,32 +43,55 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void multipleWordsAreDisplayedTest() {
+  public void wordDefinitionsFormIsDisplayed() {
     goTo("http://localhost:4567/words/new");
-    fill("#term").with("sunshine");
-    submit(".btn");
-    goTo("http://localhost:4567/words/new");
-    fill("#term").with("happiness");
+    fill("#term").with("Sunshine");
     submit(".btn");
     click("a", withText("View Words"));
-    assertThat(pageSource()).contains("sunshine");
-    assertThat(pageSource()).contains("happiness");
+    click("a", withText("Sunshine"));
+    click("a", withText("Add a new definition"));
+    assertThat(pageSource()).contains("Add a Definition for Sunshine:");
   }
 
   @Test
-  public void wordShowPageDisplaysWord() {
+  public void definitionsIsAddedAndDisplayed() {
     goTo("http://localhost:4567/words/new");
-    fill("#term").with("sunshine");
+    fill("#term").with("Happiness");
     submit(".btn");
     click("a", withText("View Words"));
-    click("a", withText("sunshine"));
-    assertThat(pageSource()).contains("sunshine");
+    click("a", withText("Happiness"));
+    click("a", withText("Add a new definition"));
+    fill("#statement").with("Cupcakes");
+    submit(".btn");
+    assertThat(pageSource()).contains("Cupcakes");
   }
 
-  @Test
-  public void wordNotFoundMessageShown() {
-    goTo("http://localhost:4567/words/999");
-    assertThat(pageSource()).contains("Word not found");
-  }
+  // @Test
+  // public void multipleWordsAreDisplayedTest() {
+  //   goTo("http://localhost:4567/words/new");
+  //   fill("#term").with("sunshine");
+  //   submit(".btn");
+  //   goTo("http://localhost:4567/words/new");
+  //   fill("#term").with("happiness");
+  //   submit(".btn");
+  //   click("a", withText("View Words"));
+  //   assertThat(pageSource()).contains("sunshine");
+  //   assertThat(pageSource()).contains("happiness");
+  // }
+  //
+  // @Test
+  // public void wordShowPageDisplaysWord() {
+  //   goTo("http://localhost:4567/words/new");
+  //   fill("#term").with("sunshine");
+  //   submit(".btn");
+  //   goTo("http://localhost:4567/words/1");
+  //   assertThat(pageSource()).contains("sunshine");
+  // }
+  //
+  // @Test
+  // public void wordNotFoundMessageShown() {
+  //   goTo("http://localhost:4567/words/999");
+  //   assertThat(pageSource()).contains("Sorry, word not found. Please insert a word.");
+  // }
 
 }
